@@ -17,7 +17,7 @@ const Details = () => {
   });
 
   return (
-    <div key={activeData.uuid}>
+    <div key={activeData.uuid} className="details">
       <div className="details-all-stats">{activeData.name.toUpperCase()}</div>
       <div className="details-top-details">
         <div className="details-crypto-icon">
