@@ -22,8 +22,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="details" element={<Details />} />
-          {/*
-          <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>
     </div>

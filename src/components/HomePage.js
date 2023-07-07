@@ -16,12 +16,6 @@ CoinsList.propTypes = {
   coins: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };
 
-const Error = ({ error }) => (
-  <div className="error-container" data-testid="error-container">
-    <span>{error}</span>
-  </div>
-);
-
 Error.propTypes = {
   error: PropTypes.string.isRequired,
 };
@@ -34,7 +28,7 @@ const Loading = () => (
 
 const Home = () => {
   const {
-    cryptos, stats, isLoading, error,
+    cryptos, stats, isLoading,
   } = useSelector(
     (state) => state.crypto,
   );
@@ -50,10 +44,7 @@ const Home = () => {
 
   return (
     <div className="content-container" data-testid="home-component">
-      {/* eslint-disable-next-line no-nested-ternary */}
-      {error !== '' ? (
-        <Error error={error} />
-      ) : isLoading ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <div>
